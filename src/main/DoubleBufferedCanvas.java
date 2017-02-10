@@ -68,7 +68,7 @@ abstract class DoubleBufferedCanvas extends Canvas implements Runnable {
 	}
 
 	public boolean keyDown(int keyEvent) {
-		return keys.get(keyEvent) != null && keys.get(keyEvent) == true;
+		return keys.get(keyEvent) != null && keys.get(keyEvent);
 	}
 
 	@Override
@@ -133,17 +133,15 @@ abstract class DoubleBufferedCanvas extends Canvas implements Runnable {
 	@Override
 	public void run() {
 		while (Thread.currentThread() == thread) {
-			if(initialized){
-				updateVars();
-				repaint();
-				if (pauseTime > 0) {
-					try {
-						Thread.sleep(pauseTime);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-				}
-			}
+            updateVars();
+            repaint();
+            if (pauseTime > 0) {
+                try {
+                    Thread.sleep(pauseTime);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
 		}
 	}
 

@@ -55,7 +55,6 @@ public class Dodge extends DoubleBufferedCanvas {
 
 		playerScore = 0;
 		level = 1;
-
 	}
 
 	private Color randColor() {

@@ -16,7 +16,7 @@ public class Framer {
 		f.add(canvas);
 		
 		f.setVisible(true);
-		
+
 		canvas.start();
 		
 		canvas.requestFocus();
